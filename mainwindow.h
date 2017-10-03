@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <readworker.h>
 
 namespace Ui {
 class MainWindow;
@@ -18,8 +19,16 @@ public:
 private slots:
     void on_actionQuit_triggered();
 
+    void on_pushButton_Initialize_clicked();
+
+    void on_somethingToTell(QString text);
+
+    void on_pushButton_GetInf_clicked();
+
 private:
     Ui::MainWindow *ui;
+    int fileDescriptor;
+    ReadWorker *worker;
 };
 
 #endif // MAINWINDOW_H

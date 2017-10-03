@@ -5,7 +5,4 @@ Qt-based GUI to interact with an Arduino via serial interface
 
 ## Using this Repository
 This project makes use of [arduino-serial by todbot](https://github.com/todbot/arduino-serial).
-Please clone this repository with:
-```sh
-git clone --recursive https://github.com/jh-isw/ArduinoSerialQt.git
-```
+Please use `git clone --recursive` to clone this repository.

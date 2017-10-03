@@ -21,6 +21,20 @@
     </sizepolicy>
    </property>
    <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLineEdit" name="lineEdit_Cmd"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_SendCmd">
+        <property name="text">
+         <string>Send Cmd</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
     <item row="0" column="0">
      <widget class="QComboBox" name="comboBox">
       <item>
@@ -65,7 +79,7 @@
       </item>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item row="4" column="0">
      <widget class="QPushButton" name="pushButton_GetInf">
       <property name="text">
        <string>Get Informations</string>
@@ -75,7 +89,7 @@
     <item row="1" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QLineEdit" name="lineEdit"/>
+       <widget class="QLineEdit" name="lineEdit_Interface"/>
       </item>
       <item>
        <widget class="QPushButton" name="pushButton_Initialize">
@@ -86,7 +100,7 @@
       </item>
      </layout>
     </item>
-    <item row="3" column="0">
+    <item row="5" column="0">
      <widget class="QTextBrowser" name="textBrowser"/>
     </item>
    </layout>

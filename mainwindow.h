@@ -25,10 +25,14 @@ private slots:
 
     void on_pushButton_GetInf_clicked();
 
+    void on_pushButton_SendCmd_clicked();
+
 private:
     Ui::MainWindow *ui;
     int fileDescriptor;
     ReadWorker *worker;
+
+    void writeToSerial(const char*);
 };
 
 #endif // MAINWINDOW_H

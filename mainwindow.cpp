@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->lineEdit->setText("/dev/ttyACM0");
+    ui->lineEdit_Interface->setText("/dev/ttyACM0");
     ui->pushButton_GetInf->setDisabled(true);
 }
 
@@ -26,6 +26,11 @@ MainWindow::~MainWindow()
     }
 }
 
+void MainWindow::writeToSerial(const char *message)
+{
+    serialport_write(this->fileDescriptor, message);
+}
+
 void MainWindow::on_actionQuit_triggered()
 {
     QApplication::quit();
@@ -36,7 +41,7 @@ void MainWindow::on_pushButton_Initialize_clicked()
     int ret;
 
     // https://wiki.qt.io/Technical_FAQ#How_can_I_convert_a_QString_to_char.2A_and_vice_versa.3F
-    QByteArray ba = ui->lineEdit->text().toLocal8Bit();
+    QByteArray ba = ui->lineEdit_Interface->text().toLocal8Bit();
     const char *c_str = ba.data();
 
     ret = serialport_init(c_str, (int)ui->comboBox->currentText().toInt());
@@ -64,5 +69,13 @@ void MainWindow::on_somethingToTell(QString text)
 
 void MainWindow::on_pushButton_GetInf_clicked()
 {
-    serialport_write(this->fileDescriptor, "r8");
+    //serialport_write(this->fileDescriptor, "i");
+    writeToSerial("i");
+}
+
+void MainWindow::on_pushButton_SendCmd_clicked()
+{
+    QByteArray ba = ui->lineEdit_Cmd->text().toLocal8Bit();
+    const char *c_str = ba.data();
+    writeToSerial(c_str);
 }

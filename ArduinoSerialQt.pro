@@ -14,11 +14,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    ../arduino-serial/arduino-serial-lib.c \
-    readworker.cpp
+    readworker.cpp \
+    arduino-serial/arduino-serial-lib.c
 
 HEADERS  += mainwindow.h \
-    ../arduino-serial/arduino-serial-lib.h \
-    readworker.h
+    readworker.h \
+    arduino-serial/arduino-serial-lib.h
 
 FORMS    += mainwindow.ui

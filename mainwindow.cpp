@@ -3,7 +3,7 @@
 #include <QThread>
 
 extern "C" {
-#include "../arduino-serial/arduino-serial-lib.h"
+#include "arduino-serial/arduino-serial-lib.h"
 }
 
 MainWindow::MainWindow(QWidget *parent) :
